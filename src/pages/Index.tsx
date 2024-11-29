@@ -47,20 +47,20 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white p-6 font-sans">
-      <div className="mx-auto max-w-2xl rounded-xl bg-white p-8 shadow-lg">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 p-6 font-sans">
+      <div className="mx-auto max-w-2xl rounded-xl bg-gray-800/50 p-8 shadow-xl backdrop-blur-sm border border-gray-700">
         <div className="mb-8 flex items-center gap-3">
-          <Filter className="h-6 w-6 text-gmail-blue" />
-          <h1 className="text-2xl font-bold text-gmail-dark">
+          <Filter className="h-6 w-6 text-blue-400" />
+          <h1 className="text-2xl font-bold text-white">
             Gmail Subscription Filter
           </h1>
         </div>
 
-        <div className="mb-6 rounded-lg bg-gray-50 p-4">
+        <div className="mb-6 rounded-lg bg-gray-900/50 p-4 backdrop-blur-sm border border-gray-700">
           <div className="mb-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Mail className="h-5 w-5 text-gmail-dark" />
-              <h2 className="text-lg font-semibold">Categories</h2>
+              <Mail className="h-5 w-5 text-blue-400" />
+              <h2 className="text-lg font-semibold text-white">Categories</h2>
             </div>
             <ArrowDown className="h-5 w-5 text-gray-400" />
           </div>
@@ -72,8 +72,8 @@ const Index = () => {
                 onClick={() => handleCategoryClick(category)}
                 className={`rounded-lg p-3 text-center transition-all ${
                   selectedCategories.includes(category)
-                    ? "bg-gmail-blue text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-blue-500 text-white"
+                    : "bg-gray-700 text-gray-300 hover:bg-gray-600"
                 }`}
               >
                 {category}
@@ -86,31 +86,31 @@ const Index = () => {
               value={newCategory}
               onChange={(e) => setNewCategory(e.target.value)}
               placeholder="Add custom category"
-              className="bg-gray-700 text-white placeholder:text-gray-400"
+              className="bg-gray-700 text-white border-gray-600 placeholder:text-gray-400"
             />
             <Button
               onClick={handleAddCategory}
-              className="bg-gmail-blue hover:bg-gmail-blue/90"
+              className="bg-blue-500 hover:bg-blue-600"
             >
               <Plus className="h-5 w-5" />
             </Button>
           </div>
         </div>
 
-        <div className="mb-6 grid gap-4">
-          <div className="rounded-lg bg-gray-700 p-4 text-white">
-            <label className="mb-2 block">Sender</label>
+        <div className="mb-6 space-y-4">
+          <div className="rounded-lg bg-gray-900/50 p-4 backdrop-blur-sm border border-gray-700">
+            <label className="mb-2 block text-gray-300">Sender</label>
             <Input
               placeholder="Enter sender email"
-              className="bg-gray-600 text-white placeholder:text-gray-400"
+              className="bg-gray-700 text-white border-gray-600 placeholder:text-gray-400"
             />
           </div>
 
-          <div className="rounded-lg bg-gray-700 p-4 text-white">
-            <label className="mb-2 block">Contains</label>
+          <div className="rounded-lg bg-gray-900/50 p-4 backdrop-blur-sm border border-gray-700">
+            <label className="mb-2 block text-gray-300">Contains</label>
             <Input
               placeholder="Enter keywords"
-              className="bg-gray-600 text-white placeholder:text-gray-400"
+              className="bg-gray-700 text-white border-gray-600 placeholder:text-gray-400"
             />
           </div>
         </div>
@@ -118,14 +118,14 @@ const Index = () => {
         <div className="grid grid-cols-2 gap-4">
           <Button
             onClick={handleApplyFilters}
-            className="w-full bg-gmail-blue text-lg font-medium hover:bg-gmail-blue/90"
+            className="w-full bg-blue-500 text-lg font-medium hover:bg-blue-600"
           >
             Apply Filters
           </Button>
           <Button
             onClick={handleReset}
             variant="outline"
-            className="w-full text-lg font-medium"
+            className="w-full text-lg font-medium border-gray-600 text-gray-300 hover:bg-gray-700"
           >
             Reset
           </Button>
